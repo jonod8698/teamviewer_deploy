@@ -1,6 +1,9 @@
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
 
+$null = New-Item -Path C:\My_PowerShell_Transcripts -ItemType Directory -ErrorAction Ignore
+Start-Transcript -Path 'C:\My_PowerShell_Transcripts\Get-Date-Transcript.txt'
+
 curl https://raw.githubusercontent.com/jonod8698/teamviewer_deploy/master/HiBioAPI_setup_x64.exe --output HiBioAPI_setup_x64.exe
 
 #font install
