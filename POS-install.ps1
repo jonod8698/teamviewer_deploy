@@ -33,3 +33,4 @@ Get-ChildItem -Path $Source -Include '*.ttf','*.ttc','*.otf' -Recurse | ForEach-
 #Install BioAPI
 curl https://raw.githubusercontent.com/jonod8698/teamviewer_deploy/master/HiBioAPI_setup_x64.exe --output HiBioAPI_setup_x64.exe
 .\HiBioAPI_setup_x64.exe /S /v/qn
+pause
