@@ -4,8 +4,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 $null = New-Item -Path C:\My_PowerShell_Transcripts -ItemType Directory -ErrorAction Ignore
 Start-Transcript -Path 'C:\My_PowerShell_Transcripts\Get-Date-Transcript.txt'
 
-curl https://raw.githubusercontent.com/jonod8698/teamviewer_deploy/master/HiBioAPI_setup_x64.exe --output HiBioAPI_setup_x64.exe
-
 #font install
 $SourceDir   = "${location}\FONTS"
 $Source      = "${location}\FONTS\*"
@@ -34,6 +32,6 @@ Get-ChildItem -Path $Source -Include '*.ttf','*.ttc','*.otf' -Recurse | ForEach-
 }
 
 #Install BioAPI
-curl https://raw.githubusercontent.com/jonod8698/teamviewer_deploy/master/HiBioAPI_setup_x64.exe --output HiBioAPI_setup_x64.exe
+curl https://raw.githubusercontent.com/jonod8698/teamviewer_deploy/master/HiBioAPI_setup_x64.exe -o HiBioAPI_setup_x64.exe
 .\HiBioAPI_setup_x64.exe /S /v/qn
 pause
